@@ -1,0 +1,76 @@
+<header *ngIf="!loading">
+   <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <logo>
+         <a class="logo navbar-brand waves-light" mdbWavesEffect href="#">
+         <strong>MEANCONNECT</strong>
+         </a>
+      </logo>
+      <links>
+         <ul class="navbar-nav mr-auto">
+         </ul>
+         <a [href]="loginURL" class="btn btn-flat btn-outline-white btn-md my-0 waves-light" mdbWavesEffect>Login</a>
+      </links>
+   </mdb-navbar>
+   <section class="view intro-2 jarallax" data-speed="0.2" style="background-attachment: fixed; max-height:1100px;">
+      <div class="full-bg-img mask">
+         <div class="container flex-center">
+            <div class="row pt-5 mt-3 w-100">
+              <div class="col-md-12 flex-center">
+                <h1 class="display-1 white-text">MEANCONNECT</h1>
+              </div>
+              <div class="col-md-12 flex-center">
+                <h4 class="white-text">Meanstack Angular 6 Steemconnect Starterkit</h4>
+              </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</header>
+
+<div *ngIf="loading">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3">
+         </div>
+         <div class="col-md-6">
+            <div id="mdb-preloader" class="flex-center" style="background-color:#ffffff !important">
+               <div class="row">
+                  <div class="col-md-12 text-center" style="margin-bottom:50px">
+                     <h2>Processing!</h2>
+                  </div>
+                  <div class="col-md-12">
+                     <center>
+                        <div id="preloader-markup">
+                           <div class="preloader-wrapper big active">
+                              <div class="spinner-layer spinner-blue-only">
+                                 <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                 </div>
+                                 <div class="gap-patch">
+                                    <div class="circle"></div>
+                                 </div>
+                                 <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+         </div>
+      </div>
+   </div>
+
+  <script>
+    const embed = document.getElementById('embed')
+
+    /*embed.on('signIn', data => {
+      console.log(`Guest signed in as ${data.name}`)
+      embed.emit('sendMessage', 'Hello world')
+    })*/
+  </script>
+</div>

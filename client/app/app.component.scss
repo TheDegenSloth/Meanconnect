@@ -1,0 +1,54 @@
+.intro-2 {
+    background: url("https://mdbootstrap.com/img/Photos/Others/gradient2.png")no-repeat center center;
+    background-size: cover;
+}
+
+.view {
+    height: 100vh !important;
+}
+
+.btn {
+    color: white !important;
+}
+
+.btn .fa {
+    margin-left: 3px;
+}
+
+.top-nav-collapse {
+    background-color: #424f95 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #424f95 !important;
+    }
+}
+
+h6 {
+    line-height: 1.7;
+}
+
+.rgba-gradient .full-bg-img {
+    background: linear-gradient(45deg, rgba(161, 51, 56, 0.6), rgba(29, 210, 177, 0.6) 100%);
+}
+
+@media (max-width: 450px) {
+    .margins {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+        height: 1020px;
+    }
+}

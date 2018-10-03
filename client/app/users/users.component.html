@@ -1,0 +1,212 @@
+<header *ngIf="!loading">
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark light-blue lighten-1 fixed-top scrolling-navbar">
+        <logo>
+            <a class="navbar-brand"
+               routerLink="/home">MEANCONNECT</a>
+        </logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link waves-light"
+                       routerLink="/users"
+                       *ngIf="admin"
+                       mdbWavesEffect>Users
+                      <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light"
+                       href="/home"
+                       mdbWavesEffect>home
+                    </a>
+                </li>
+            </ul>
+            <a class="navbar-text white-text"
+               (click)="logout()">
+                Logout
+            </a>
+        </links>
+    </mdb-navbar>
+
+    <div class="container"
+         style="margin: 65px auto">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card testimonial-card mt-2 p-3"
+                             *ngIf="loading">Loading...</div>
+
+                        <div class="card testimonial-card mt-2 p-3"
+                             *ngIf="!users?.length && !loading">No Users</div>
+
+                        <div class="card testimonial-card mt-2 p-3"
+                             *ngFor="let user of users">
+                          <!--Table-->
+                          <table class="table">
+
+                            <!--Table head-->
+                            <thead class="blue-grey lighten-4">
+                            <tr>
+                              <th>Username</th>
+                              <th>Session</th>
+                              <th>ip</th>
+                              <th>firstlogin</th>
+                              <th>lastlogin</th>
+                              <th>userlevel</th>
+                              <th>admin</th>
+                              <th>Edit</th>
+                            </tr>
+                            </thead>
+                            <!--Table head-->
+
+                            <!--Table body-->
+                            <tbody>
+                            <tr>
+                              <td>{{ user.username }}</td>
+                              <td>{{ user.session }}</td>
+                              <td>{{ user.ip }}</td>
+                              <td>{{ user.firstlogindate }}</td>
+                              <td>{{ user.lastlogindate }}</td>
+                              <td>{{ user.userlevel }}</td>
+                              <td>{{ user.admin }}</td>
+                              <td>
+                                <form>
+                                  <div class="col col-md-4 pb-3"
+                                       *ngIf="user !== edit">
+                                    <a class="btn btn-primary btn-sm"
+                                       (click)="edit = user; showAddUserArea = false">Edit</a>
+                                  </div>
+                                </form>
+                              </td>
+                            </tr>
+                            </tbody>
+                            <!--Table body-->
+                          </table>
+
+                          <!--Table-->
+
+                            <div class="custom-control custom-checkbox"
+                                 *ngIf="user === edit"
+                                 (click)="edit.admin = !edit.admin">
+                                <input type="checkbox"
+                                       name="admin"
+                                       class="custom-control-input"
+                                       [checked]="edit.admin" />
+                                <div class="custom-control-label">is admin</div>
+                            </div>
+
+                            <div class="row"
+                                 *ngIf="user === edit">
+                                <div class="col col-md-4 pb-3">
+                                    <strong>User Level:</strong>
+                                    <input class="form-control"
+                                           type="number"
+                                           min="0"
+                                           max="10"
+                                           name="level"
+                                           [(ngModel)]="edit.userlevel" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-md-8 pb-3"
+                                     *ngIf="user === edit">
+                                    <a class="btn btn-default"
+                                       (click)="edit = undefined">Cancel</a>
+
+                                    <a class="btn btn-primary"
+                                       (click)="saveUser()">Save</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card testimonial-card mt-2 p-3"
+                             *ngIf="showAddUserArea">
+                            <h3>New user:</h3>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox"
+                                       name="admin"
+                                       class="custom-control-input"
+                                       [(ngModel)]="newUser.admin" />
+                                <div class="custom-control-label">is admin</div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-4 pb-3">
+                                    <strong>Username:</strong>
+                                    <input class="form-control"
+                                           name="username"
+                                           [(ngModel)]="newUser.username" />
+                                </div>
+                                <div class="col col-md-4 pb-3">
+                                    <strong>User Level:</strong>
+                                    <input class="form-control"
+                                           type="number"
+                                           min="0"
+                                           max="10"
+                                           name="level"
+                                           [(ngModel)]="newUser.userlevel" />
+                                </div>
+                            </div>
+                            <p class="error"
+                               *ngIf="error">{{ error }}</p>
+
+                            <p *ngIf="saving">Saving...</p>
+
+                            <a class="btn btn-primary"
+                               *ngIf="showAddUserArea"
+                               [disabled]="saving"
+                               (click)="addUser()">Submit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="btn btn-primary m-3"
+                   *ngIf="!showAddUserArea && admin"
+                   (click)="showAddUserArea = true">Add user</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div *ngIf="loading">
+
+  <div class="container">
+     <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+           <!--Big blue-->
+           <div id="mdb-preloader" class="flex-center" style="background-color:#ffffff !important">
+              <div class="row">
+                 <div class="col-md-12 text-center" style="margin-bottom:50px">
+                    <h2>Loading!</h2>
+                 </div>
+                 <div class="col-md-12">
+                    <center>
+                       <div id="preloader-markup">
+                          <div class="preloader-wrapper big active">
+                             <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                   <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                   <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                   <div class="circle"></div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </center>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+     </div>
+  </div>
+
+</div>

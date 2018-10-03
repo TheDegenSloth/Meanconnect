@@ -1,0 +1,109 @@
+<header *ngIf="!loading">
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark light-blue lighten-1 fixed-top scrolling-navbar">
+        <logo>
+            <a class="navbar-brand"
+               routerLink="/home">MEANCONNECT</a>
+        </logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link waves-light"
+                       href="#"
+                       mdbWavesEffect>Home
+                    </a>
+                </li>
+            </ul>
+            <a class="nav-link waves-effect waves-light navbar-text white-text"
+               (click)="logout()">
+                Logout
+            </a>
+        </links>
+    </mdb-navbar>
+
+    <div class="container"
+         style="margin: 45px auto">
+
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card testimonial-card mt-5 pb-3">
+                            <div class="card-up rgba-indigo-strong">
+                            </div>
+                            <div class="avatar mx-auto">
+                                <img [src]="image"
+                                     class="rounded-circle">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{ username }}</h4>
+                                <hr>
+                                <p>
+                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <section class="pt-5 mt-1 pb-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-cascade reverse">
+
+                                <div class="card-body card-body-cascade text-center">
+                                    <h2>
+                                        <a class="font-weight-bold">Test Mdbootstrap box</a>
+                                    </h2>
+                                  <p>Test test!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-5 mt-4">
+                </section>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div *ngIf="loading">
+  <div class="container">
+     <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+           <!--Big blue-->
+           <div id="mdb-preloader" class="flex-center" style="background-color:#ffffff !important">
+              <div class="row">
+                 <div class="col-md-12 text-center" style="margin-bottom:50px">
+                    <h2>Processing!</h2>
+                 </div>
+                 <div class="col-md-12">
+                    <center>
+                       <div id="preloader-markup">
+                          <div class="preloader-wrapper big active">
+                             <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                   <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                   <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                   <div class="circle"></div>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </center>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+     </div>
+  </div>
+</div>
