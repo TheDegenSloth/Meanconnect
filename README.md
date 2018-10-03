@@ -55,8 +55,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 INSTALL PM2
 
-'npm i pm2'
+Run 'npm i pm2'
 
-'pm2 start server/index.js' Api Start
+Run 'pm2 start server/index.js' Api Start
 
-'pm2 start /usr/bin/ng -- serve' Non production run method
+Run 'pm2 start /usr/bin/ng -- serve' Non production run method
