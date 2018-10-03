@@ -1,18 +1,27 @@
 # Meanconnect
 
 This project was created to give people a head start making a Steem based applications.
+This build is using mdboostrap which can be found [Here](https://mdbootstrap.com/material-design-for-bootstrap/?utm_ref_id=34523)
 
 ### This applications includes:
-User login
+Login / landing page
+
 Homepage
+
 Admin page to add users
 
 ### Coming soon!
+
 Blog
+
 Tos
+
 Privacy policy
+
 User profile
+
 Wallet
+
 and much more!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.5.
@@ -45,8 +54,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 INSTALL PM2
 
-npm i pm2
+'npm i pm2'
 
-pm2 start server/index.js Api Start
+'pm2 start server/index.js' Api Start
 
-pm2 start /usr/bin/ng -- serve Non production run method
+'pm2 start /usr/bin/ng -- serve' Non production run method
