@@ -1,5 +1,20 @@
 # Meanconnect
 
+This project was created to give people a head start making a Steem based applications.
+
+### This applications includes:
+User login
+Homepage
+Admin page to add users
+
+### Coming soon!
+Blog
+Tos
+Privacy policy
+User profile
+Wallet
+and much more!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.5.
 
 ## Development server
@@ -26,9 +41,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## starting app:
+## Starting app:
+
 INSTALL PM2
+
 npm i pm2
 
-pm2 start server/index.js
-pm2 start /usr/bin/ng -- serve
+pm2 start server/index.js Api Start
+
+pm2 start /usr/bin/ng -- serve Non production run method
