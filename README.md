@@ -2,7 +2,7 @@
 
 This project was created to give people a head start making a Steem based applications.
 
-This build starter kit is using [Mdboostrap Angular6](https://mdbootstrap.com/material-design-for-bootstrap/?utm_ref_id=34523)
+This build starter kit is using [Mdbootstrap Angular 6](https://mdbootstrap.com/material-design-for-bootstrap/?utm_ref_id=34523)
 
 ### This applications includes:
 Login / landing page
