@@ -10,11 +10,12 @@ We highly recommend using pro it come with many prebuilt component which makes d
 * Login / landing page
 * Homepage
 * Admin page to add users
+* Tos
+* Privacy policy
+* Discord integration
 
 ### Coming soon!
 * Blog
-* Tos
-* Privacy policy
 * User profile
 * Wallet
 * and much more!
@@ -43,4 +44,32 @@ Run `pm2 start server/index.js` Api Start
 
 Run `pm2 start /usr/bin/ng -- serve` Non production run method
 
+## How to change the discord settings:
 
+Find and open file client/index.html
+
+Scroll down till you see
+
+<code>
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+      new Crate({
+        server: '460880985924435968',
+        channel: '460880985924435971',
+        shard: 'https://cl1.widgetbot.io'
+      })
+    </script>
+</code>
+
+Go into user settings
+
+Go to appearance tab
+
+Scroll down till you see developer mode and click it
+
+Go to your channel right click the upsidedown cheveron
+
+You will see copy id replace that with server id
+
+Next you will need to right click your channel you want and replace that as well
+
+Don't forget to turn off developermode
