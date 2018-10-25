@@ -1,0 +1,96 @@
+<header *ngIf="!loading">
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark light-blue lighten-1 fixed-top scrolling-navbar">
+    <logo>
+      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#">
+        <strong>MEANCONNECT</strong>
+      </a>
+    </logo>
+    <links>
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <a [href]="loginURL" class="btn btn-flat btn-outline-white btn-md my-0 waves-light" mdbWavesEffect>Login</a>
+    </links>
+  </mdb-navbar>
+  <section class="view intro-2 jarallax"  style="background-attachment: fixed; max-height:1100px;">
+    <div class="container" style="margin: 100px auto">
+    <div class="row">
+      <div class="col-md-2">
+
+      </div>
+      <div class="col-md-8">
+        <!-- Default form register -->
+        <form class="text-left border border-light p-5">
+
+          <p class="h4 mb-4">Claim Accounts</p>
+
+          Main Account:<input  class="form-control" type="text" id="main_account"><br/>
+          Private Active Key:<input class="form-control" type="text" id="private_key"><br/>
+          New Account Name:<input class="form-control" type="text" id="new_account"><br/>
+          New Account Pass:<input class="form-control" type="text" id="new_account_pass"><br/>
+          <mdb-checkbox [inline]="true" [default]="true" [checked]="true" type="checkbox" id="claim_op" name="claim_op">Claim</mdb-checkbox>
+          <mdb-checkbox [inline]="true" [checked]="true" type="checkbox" id="create_op" name="create_op">Create</mdb-checkbox><br/>
+          <div id="error_section"></div>
+          <button mdbBtn color="info"  type="button" value="proceed" id="create_claim" block="true" class="my-4" type="submit">Submit</button>
+
+
+
+          <hr>
+
+        </form>
+        <!-- Default form register -->
+      </div>
+      <div class="col-md-2">
+
+      </div>
+    </div>
+    </div>
+  </section>
+</header>
+
+<div *ngIf="loading">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div id="mdb-preloader" class="flex-center" style="background-color:#ffffff !important">
+          <div class="row">
+            <div class="col-md-12 text-center" style="margin-bottom:50px">
+              <h2>Processing!</h2>
+            </div>
+            <div class="col-md-12">
+              <center>
+                <div id="preloader-markup">
+                  <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const embed = document.getElementById('embed')
+
+    /*embed.on('signIn', data => {
+      console.log(`Guest signed in as ${data.name}`)
+      embed.emit('sendMessage', 'Hello world')
+    })*/
+  </script>
+</div>

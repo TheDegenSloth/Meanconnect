@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { TosComponent } from './tos/tos.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { ClaimComponent } from './claim/claim.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'privacypolicy',
         component: PrivacypolicyComponent,
+    },
+    {
+        path: 'claim',
+        component: ClaimComponent,
     }
 ];
 

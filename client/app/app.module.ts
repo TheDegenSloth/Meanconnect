@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 
-import { MDBBootstrapModule} from 'angular-bootstrap-md';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CheckboxModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog/blog.component';
@@ -15,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { TosComponent } from './tos/tos.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { RegisterComponent } from './register/register.component';
+import { ClaimComponent } from './claim/claim.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +28,8 @@ import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component'
         UsersComponent,
         TosComponent,
         PrivacypolicyComponent,
+        RegisterComponent,
+        ClaimComponent,
     ],
     imports: [
         BrowserModule,
